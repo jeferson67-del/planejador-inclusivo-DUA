@@ -300,6 +300,7 @@ FEW_SHOT_EXAMPLES = {
 def LLM_Setup(prompt_text):
     model = ChatGroq(
         model="llama-3.3-70b-versatile"
+        temperature=0
     )
     parser = StrOutputParser()
     chain = model | parser
