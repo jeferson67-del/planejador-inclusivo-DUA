@@ -299,7 +299,7 @@ FEW_SHOT_EXAMPLES = {
 # 4. FUNÇÕES DE GERAÇÃO (2 MODOS PARA O EXPERIMENTO COMPARATIVO)
 def LLM_Setup(prompt_text):
     model = ChatGroq(
-        model="llama-3.3-70b-versatile"
+        model="llama-3.3-70b-versatile",
         temperature=0
     )
     parser = StrOutputParser()
