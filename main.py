@@ -333,8 +333,9 @@ def gerar_prompt_simples(subject, topic, grade, duration, objectives, bncc, perf
     Representa prompt engineering tradicional.
     """
     return LLM_Setup(f"""
-Você é um especialista em Desenho Universal para a Aprendizagem (DUA).
-Crie um plano de aula seguindo os três princípios do DUA (CAST, 2018):
+Você é um especialista em Educação Inclusiva e Desenho Universal para a Aprendizagem (DUA).
+Sua tarefa é gerar planos de aula que eliminem barreiras de aprendizagem seguindo RIGOROSAMENTE
+a estrutura dos três princípios do DUA (CAST, 2018):
 1. Múltiplos Meios de Engajamento
 2. Múltiplos Meios de Representação
 3. Múltiplos Meios de Ação e Expressão
@@ -345,11 +346,13 @@ Dados:
 - Perfis de Inclusão: {perfis_str}
 - Objetivos: {objectives}
 
-Inclua para cada atividade:
-- Descrição detalhada
-- Adaptações de acessibilidade por perfil
-- Critérios de avaliação
+**SAÍDA ESPERADA (Plano DUA):**
+Inclua obrigatoriamente:
+1. Nome do Plano, Ano de Ensino e Habilidades BNCC
+2. Proposta de Dinâmica com critério de agrupamento e gestão do tempo
+3. Três atividades (Foco 1 / Foco 2 / Foco 3) cada uma com Descrição, Acessibilidade e Critério de Avaliação
 
+Adapte cada seção especificamente para os perfis informados.
 Responda em Markdown formatado.
 """)
 
@@ -365,7 +368,10 @@ def gerar_icl(subject, topic, grade, duration, objectives, bncc, perfis_str, per
     prompt = f"""
 Você é um especialista em Educação Inclusiva e Desenho Universal para a Aprendizagem (DUA).
 Sua tarefa é gerar planos de aula que eliminem barreiras de aprendizagem seguindo RIGOROSAMENTE
-a estrutura dos três princípios do DUA (CAST, 2018).
+a estrutura dos três princípios do DUA (CAST, 2018):
+1. Múltiplos Meios de Engajamento
+2. Múltiplos Meios de Representação
+3. Múltiplos Meios de Ação e Expressão
 
 {"="*60}
 EXEMPLOS DE REFERÊNCIA (few-shot):
@@ -384,7 +390,7 @@ AGORA GERE O PLANO PARA O SEGUINTE CASO:
 - Objetivos de Aprendizagem: {objectives}
 
 **SAÍDA ESPERADA (Plano DUA):**
-Siga exatamente a mesma estrutura dos exemplos acima, incluindo obrigatoriamente:
+Inclua obrigatoriamente:
 1. Nome do Plano, Ano de Ensino e Habilidades BNCC
 2. Proposta de Dinâmica com critério de agrupamento e gestão do tempo
 3. Três atividades (Foco 1 / Foco 2 / Foco 3) cada uma com Descrição, Acessibilidade e Critério de Avaliação
