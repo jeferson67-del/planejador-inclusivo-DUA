@@ -12,7 +12,7 @@ load_dotenv()
 
 st.set_page_config(page_title="DUA-ICL Planner", layout="wide", page_icon="🎓")
 
-FEW_SHOT_EXAMPLES = {
+Banco_de_exemplos = {
 
 
     # EXEMPLO 1 — MÚLTIPLOS PERFIS
