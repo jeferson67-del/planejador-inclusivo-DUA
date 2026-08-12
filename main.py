@@ -462,7 +462,7 @@ with aba_gerador:
 
     perfil_turma = st.multiselect(
         "Perfis de Inclusão na Turma",
-        [k for k in FEW_SHOT_EXAMPLES.keys() if k != "Múltiplos Perfis"],
+        [k for k in Banco_de_exemplos.keys() if k != "Múltiplos Perfis"],
         help="Exemplos few-shot serão selecionados dinamicamente. Ao selecionar mais de um perfil, o exemplo 'Múltiplos Perfis' é injetado automaticamente."
     )
 
