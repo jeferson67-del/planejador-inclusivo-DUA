@@ -527,7 +527,7 @@ with aba_comparativo:
 
     c_perfis = st.multiselect(
         "Perfis de Inclusão",
-        [k for k in FEW_SHOT_EXAMPLES.keys() if k != "Múltiplos Perfis"],
+        [k for k in Banco_de_exemplos.keys() if k != "Múltiplos Perfis"],
         key="c_perfis"
     )
 
@@ -565,7 +565,7 @@ with aba_comparativo:
                             c_objectives, c_bncc, perfis_str, c_perfis)
                         st.markdown("#### Modo 2 — ICL Estático ⭐")
                         st.caption(
-                            "Exemplos few-shot fixos selecionados pelo perfil da turma.")
+                            "Exemplos fixos selecionados pelo perfil da turma.")
                         with st.expander("Ver exemplos ICL injetados"):
                             st.markdown(exemplos_usados)
                         st.markdown(out_icl)
