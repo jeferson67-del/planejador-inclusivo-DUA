@@ -314,15 +314,15 @@ def selecionar_exemplos_icl(perfis_selecionados: list) -> str:
     'Múltiplos Perfis' para guiar o modelo no caso de coexistência.
     """
     if not perfis_selecionados:
-        return FEW_SHOT_EXAMPLES["TDAH"]
+        return Banco_de_exemplos["TDAH"]
 
-    exemplos = [FEW_SHOT_EXAMPLES[p]
-                for p in perfis_selecionados if p in FEW_SHOT_EXAMPLES]
+    exemplos = [Banco_de_exemplos[p]
+                for p in perfis_selecionados if p in Banco_de_exemplos]
 
     # Injeta o exemplo de múltiplos perfis quando há mais de um perfil
     # para ensinar o modelo a lidar com coexistência de necessidades
     if len(perfis_selecionados) > 1 and "Múltiplos Perfis" not in perfis_selecionados:
-        exemplos.append(FEW_SHOT_EXAMPLES["Múltiplos Perfis"])
+        exemplos.append(Banco_de_exemplos["Múltiplos Perfis"])
 
     return "\n".join(exemplos)
 
