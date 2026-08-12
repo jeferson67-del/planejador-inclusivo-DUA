@@ -506,9 +506,7 @@ with aba_gerador:
 with aba_comparativo:
     st.subheader("🔬 Experimento Comparativo")
     st.info("""
-    **Para o TCC:** Esta aba gera o mesmo plano pelos dois modos em paralelo.
-    Use os resultados para aplicar o Checklist DUA e comparar a aderência entre abordagens:
-    Modo 1 — Prompt Estruturado vs Modo 2 — ICL Estático.
+   ** Esta aba gera o mesmo plano pelos dois modos em paralelo.
     """)
 
     col1, col2 = st.columns(2)
